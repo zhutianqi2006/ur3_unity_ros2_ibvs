@@ -136,7 +136,9 @@ public class ur_data_processing : MonoBehaviour
         if (ros2Node == null && ros2Unity.Ok())
         {
             ros2Node = ros2Unity.CreateNode("ROS2UnityURControl");
-            vel_sub = ros2Node.CreateSubscription<std_msgs.msg.Float64MultiArray>("simulink_mpc_result", ros_vel_callback);
+            QualityOfServiceProfile qualityOfServiceProfile = new QualityOfServiceProfile();
+            qualityOfServiceProfile.SetHistory(HistoryPolicy.QOS_POLICY_HISTORY_KEEP_LAST, 0);
+            vel_sub = ros2Node.CreateSubscription<std_msgs.msg.Float64MultiArray>("simulink_mpc_result", ros_vel_callback, qualityOfServiceProfile);
             joint_pub = ros2Node.CreatePublisher<sensor_msgs.msg.JointState>("ur3_sim_joint_state");
         }
         List<double> jointPositionList = new List<double>

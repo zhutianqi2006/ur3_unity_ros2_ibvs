@@ -76,3 +76,7 @@ This project does not involve the controller part. Controller examples can be fo
 | Project | Link|
 | --------------------------| ------------------------------------------------------------------------------------- |
 | UR3 Simulink ROS2 IBVS | https://github.com/zhutianqi2006/ur3_simulink_ros2_ibvs_mpc  |
+
+### Common Issues
+
+If it suddenly can't run, simply delete all the files inside C:\ProgramData\eprosima\fastrtps_interprocess.

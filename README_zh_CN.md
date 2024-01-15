@@ -74,3 +74,7 @@ unity中会发布两个话题，其中/current_pixel发布像素点位置，数�
 | Project | Link|
 | --------------------------| ------------------------------------------------------------------------------------- |
 | UR3 Simulink ROS2 IBVS | https://github.com/zhutianqi2006/ur3_simulink_ros2_ibvs_mpc  |
+
+### 常见问题
+
+如果simulink编译后无法运行，删除C:\ProgramData\eprosima\fastrtps_interprocess内的所有文件即可。
